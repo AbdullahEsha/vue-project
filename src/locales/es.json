@@ -1,0 +1,31 @@
+{
+  "home": {
+    "title": "Bienvenido a la aplicación",
+    "description": "Esta es una aplicación de ejemplo",
+    "logoutButton": "Cerrar sesión",
+    "loginLink": "Iniciar sesión"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "registerLink": "¿No tienes una cuenta? Regístrate"
+  },
+  "register": {
+    "title": "Registro",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "registerButton": "Registro",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "loginLink": "¿Ya tienes una cuenta? Inicia sesión"
+  },
+  "forgotPassword": {
+    "title": "¿Olvidaste tu contraseña?",
+    "email": "Correo electrónico",
+    "sendButton": "Enviar",
+    "loginLink": "¿Ya tienes una cuenta? Inicia sesión",
+    "registerLink": "¿No tienes una cuenta? Regístrate"
+  }
+}
