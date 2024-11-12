@@ -1,4 +1,4 @@
-# Vue Task Project
+# Vue Project
 
 This repository contains a full-stack application using Vue.js with TypeScript for the frontend and Express with TypeScript for the backend. It includes basic features like authentication, localization (i18n), and session management.
 
@@ -21,7 +21,7 @@ npm init vue@latest
 ```
 
 `Select options: TypeScript, Router, Pinia, ESLint, and Prettier as required.`
-Install Frontend Dependencies
+Install vue-project Dependencies
 
 ## Project Setup
 
@@ -57,7 +57,7 @@ Set Up Vue i18n (Localization), add translation files in src/locales/en.json and
 
 ### Configure Axios for HTTP Requests
 
-In frontend/src/services, create axiosInstance.ts for Axios configuration.
+In vue-project/src/services, create axiosInstance.ts for Axios configuration.
 
 ### Run the Project
 
@@ -66,12 +66,6 @@ npm run dev || yarn dev
 ```
 
 The vue-project will start as development in server url `http://localhost:5173`
-
-Testing and Development
-Access the Frontend
-
-Open your browser and go to http://localhost:5173.
-Access the Backend
 
 1. Initialize Vue
 
