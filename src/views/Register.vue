@@ -7,11 +7,22 @@
       <hr class="my-3" />
       <form @submit.prevent="handleRegister">
         <div class="my-3">
-          <label for="username">{{ $t('register.username') }}</label>
+          <label for="name">{{ $t('register.name') }}</label>
           <input
             type="text"
-            id="username"
-            v-model="username"
+            id="name"
+            v-model="name"
+            required
+            class="w-full border border-gray-300 p-1"
+          />
+        </div>
+        <!-- email -->
+        <div class="my-3">
+          <label for="email">{{ $t('register.email') }}</label>
+          <input
+            type="email"
+            id="email"
+            v-model="email"
             required
             class="w-full border border-gray-300 p-1"
           />
@@ -38,8 +49,6 @@
         <router-link :to="{ name: 'Login' }">
           {{ $t('register.loginLink') }}
         </router-link>
-
-        
       </div>
     </div>
   </div>
@@ -54,21 +63,24 @@ export default defineComponent({
   name: 'UserRegister',
   setup() {
     const router = useRouter()
-    const username = ref('')
+    const name = ref('')
+    const email = ref('')
     const password = ref('')
     const errorMessage = ref('')
 
     const handleRegister = async () => {
       try {
-        await register(username.value, password.value)
+        await register(name.value, email.value, password.value)
         router.push({ name: 'Login' })
       } catch (error) {
-        errorMessage.value = error.response.data.message
+        const err = error as { response?: { data?: { message?: string } } }
+        errorMessage.value = err.response?.data?.message || 'An error occurred'
       }
     }
 
     return {
-      username,
+      name,
+      email,
       password,
       errorMessage,
       handleRegister,

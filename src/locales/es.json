@@ -15,7 +15,8 @@
   },
   "register": {
     "title": "Registro",
-    "username": "Nombre de usuario",
+    "name": "Nombre de usuario",
+    "email": "Correo electrónico",
     "password": "Contraseña",
     "registerButton": "Registro",
     "forgotPassword": "¿Olvidaste tu contraseña?",
@@ -27,5 +28,18 @@
     "sendButton": "Enviar",
     "loginLink": "¿Ya tienes una cuenta? Inicia sesión",
     "registerLink": "¿No tienes una cuenta? Regístrate"
+  },
+  "admin": {
+    "title": "Administrador",
+    "description": "Esta es la página de administrador",
+    "logoutButton": "Cerrar sesión",
+    "loginLink": "Iniciar sesión",
+    "token": "Token",
+    "user": {
+      "id": "ID",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "role": "Rol"
+    }
   }
 }

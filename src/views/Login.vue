@@ -7,11 +7,11 @@
       <hr class="my-3" />
       <form @submit.prevent="handleLogin">
         <div class="my-3">
-          <label for="username">{{ $t('login.username') }}</label>
+          <label for="email">{{ $t('login.email') }}</label>
           <input
             type="text"
-            id="username"
-            v-model="username"
+            id="email"
+            v-model="email"
             required
             class="w-full border border-gray-300 p-1"
           />
@@ -55,25 +55,28 @@ export default defineComponent({
   name: 'UserLogin',
   setup() {
     const router = useRouter()
-    const username = ref('')
+    const email = ref('')
     const password = ref('')
     const errorMessage = ref('')
 
     const handleLogin = async () => {
       try {
-        // Call the login function from authService
-        await login(username.value, password.value)
-
+        const data = await login(email.value, password.value)
         // Redirect to the home page after successful login
-        await router.push({ name: 'Home' })
+        if (data) {
+          await router.push({ name: 'AdminDashboard' })
+        } else {
+          alert('Invalid credentials')
+        }
       } catch (error) {
-        // Display the error message if login fails
-        errorMessage.value = error.response.data.message
+        errorMessage.value =
+          (error as { response?: { data?: { message?: string } } })?.response
+            ?.data?.message || 'An error occurred'
       }
     }
 
     return {
-      username,
+      email,
       password,
       errorMessage,
       handleLogin,

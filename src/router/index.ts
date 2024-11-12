@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import ForgotPassword from '../views/ForgotPassword.vue'
-import ResetPassword from '../views/ResetPassword.vue'
+import HomeView from '@/views/HomeView.vue'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import AdminDashboard from '@/views/admin/AdminDashboard.vue'
+import ResetPassword from '@/views/ResetPassword.vue'
+import ForgotPassword from '@/views/ForgotPassword.vue'
+
 const routes = [
   {
     path: '/',
@@ -14,9 +16,6 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import('../views/AboutView.vue'),
     meta: { requiresAuth: true },
   },
@@ -35,6 +34,11 @@ const routes = [
     path: '/reset-password/:token',
     name: 'ResetPassword',
     component: ResetPassword,
+  },
+  {
+    path: '/admin/dashboard',
+    name: 'AdminDashboard',
+    component: AdminDashboard,
   },
 ]
 

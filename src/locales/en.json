@@ -7,7 +7,7 @@
   },
   "login": {
     "title": "Login",
-    "username": "Username",
+    "email": "Email",
     "password": "Password",
     "loginButton": "Login",
     "registerLink": "Don't have an account? Register",
@@ -15,7 +15,8 @@
   },
   "register": {
     "title": "Register",
-    "username": "Username",
+    "name": "Name",
+    "email": "Email",
     "password": "Password",
     "registerButton": "Register",
     "loginLink": "Already have an account? Login",
@@ -27,5 +28,18 @@
     "sendButton": "Send Verification URL",
     "loginLink": "Already have an account? Login",
     "registerLink": "Don't have an account? Register"
+  },
+  "admin": {
+    "title": "Admin",
+    "welcome": "Welcome to the admin page",
+    "logoutButton": "Logout",
+    "loginLink": "Login",
+    "token": "Token",
+    "user": {
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role"
+    }
   }
 }

@@ -1,36 +1,54 @@
 import axios from './axiosInstance'
-import { useRouter } from 'vue-router'
 
-export const register = (username: string, password: string) => {
-  return axios.post('/auth/register', { username, password })
+export const register = async (
+  name: string,
+  email: string,
+  password: string,
+) => {
+  try {
+    const response = await axios.post('/auth/register', {
+      name,
+      email,
+      password,
+    })
+
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-export const login = async (username: string, password: string) => {
-  const response = await axios.post('http://localhost:3001/api/auth/login', {
-    username,
+export const login = async (email: string, password: string) => {
+  const response = await axios.post('/auth/login', {
+    email,
     password,
   })
-  localStorage.setItem('token', response.data.token) // Store token in local storage
-  localStorage.setItem('user', JSON.stringify(response.data.user))
-  return response.data
+
+  if (response.data.message) {
+    localStorage.setItem('token', response.data.accessToken)
+    localStorage.setItem('user', JSON.stringify(response.data.user))
+    return true
+  } else {
+    return false
+  }
 }
 
 export const logout = async () => {
-  // Optionally call the backend logout endpoint
-  await fetch('http://localhost:3001/api/auth/logout', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-  })
-  // Remove token and user data from local storage
-  localStorage.removeItem('token')
-  localStorage.removeItem('user')
-
-  // Redirect to login page
-  const router = useRouter()
-  router.push({ name: 'Login' })
+  try {
+    fetch('http://localhost:5000/api/v1/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    return true
+  } catch (error) {
+    console.log(error)
+    return false
+  }
 }
 
 export const forgotPassword = (email: string) => {
