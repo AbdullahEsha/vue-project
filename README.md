@@ -75,7 +75,7 @@ Access the Backend
 
 1. Initialize Vue
 
-   # Select TypeScript, Router, Pinia, ESLint, Prettier options as required.
+   `Select TypeScript, Router, Pinia, ESLint, Prettier options as required.`
 
    cd vue-frontend
    npm install
@@ -87,17 +87,24 @@ Access the Backend
 
 3. Setting Up Vue I18n
    Install the Vue I18n package:
-   npm install vue-i18n@next
+   `npm install vue-i18n@next`
 
-4. Create a folder for your translations:
-   src/locales/en.json
-   src/locales/es.json
+4. Create a folder for translations:
+
+```bash
+   src
+└── locales
+    ├── en
+    │   └── translation.json
+    └── es
+        └── translation.json
+```
 
 5. Set Up Axios Configuration
-   frontend/src/services/axiosInstance.ts
+   `frontend/src/services/axiosInstance.ts`
 
 6. Create Authentication Service
-   frontend/src/services/authService.ts
+   `frontend/src/services/authService.ts`
 
 7. Route protection added based on jwt accesstoken that stored in Local storage
 
@@ -142,7 +149,6 @@ export default defineComponent({
     const handleResetPassword = async () => {
       // continue
     }
-
     return {
     // continue
       token,
