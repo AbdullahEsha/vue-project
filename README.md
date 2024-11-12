@@ -76,20 +76,19 @@ Access the Backend
 1. Initialize Vue
 
    `Select TypeScript, Router, Pinia, ESLint, Prettier options as required.`
+   
+   - `npm install`
+   - `npm run format`
+   - `npm run dev`
 
-   cd vue-frontend
-   npm install
-   npm run format
-   npm run dev
-
-2. Install Axios for HTTP Requests
+3. Install Axios for HTTP Requests
    npm install axios
 
-3. Setting Up Vue I18n
+4. Setting Up Vue I18n
    Install the Vue I18n package:
    `npm install vue-i18n@next`
 
-4. Create a folder for translations:
+5. Create a folder for translations:
 
 ```bash
 src
