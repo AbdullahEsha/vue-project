@@ -92,7 +92,7 @@ Access the Backend
 4. Create a folder for translations:
 
 ```bash
-   src
+src
 └── locales
     ├── en
     │   └── translation.json
