@@ -63,6 +63,8 @@ export default defineComponent({
       try {
         const data = await login(email.value, password.value)
         // Redirect to the home page after successful login
+
+        console.log('data', data)
         if (data) {
           await router.push({ name: 'AdminDashboard' })
         } else {
