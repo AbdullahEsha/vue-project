@@ -11,7 +11,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    meta: { requiresAuth: true },
   },
   {
     path: '/about',
@@ -39,8 +38,15 @@ const routes = [
     path: '/admin/dashboard',
     name: 'AdminDashboard',
     component: AdminDashboard,
+    meta: { requiresAuth: true },
   },
 ]
+
+routes.push({
+  path: '/:pathMatch(.*)*',
+  name: 'NotFound',
+  component: HomeView,
+})
 
 const router = createRouter({
   history: createWebHistory(),

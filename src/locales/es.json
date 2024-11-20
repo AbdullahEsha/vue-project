@@ -1,6 +1,7 @@
 {
   "home": {
     "title": "Bienvenido a la aplicación",
+    "welcome": "Bienvenido a la página de inicio",
     "description": "Esta es una aplicación de ejemplo",
     "logoutButton": "Cerrar sesión",
     "loginLink": "Iniciar sesión"
