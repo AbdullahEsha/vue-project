@@ -70,19 +70,19 @@ The vue-project will start as development in server url `http://localhost:5173`
 1. Initialize Vue
 
    `Select TypeScript, Router, Pinia, ESLint, Prettier options as required.`
-   
+
    - `npm install`
    - `npm run format`
    - `npm run dev`
 
-3. Install Axios for HTTP Requests
+2. Install Axios for HTTP Requests
    npm install axios
 
-4. Setting Up Vue I18n
+3. Setting Up Vue I18n
    Install the Vue I18n package:
    `npm install vue-i18n@next`
 
-5. Create a folder for translations:
+4. Create a folder for translations:
 
 ```bash
 src
@@ -156,4 +156,31 @@ Get and print the token value like this way
 <template>
   <span>Token: {{ token }}</span>
 </template>
+```
+
+10. Disable devtools for the project
+
+```ts
+// vite.config.ts
+
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+// import vueDevTools from 'vite-plugin-vue-devtools'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+    vueJsx(),
+    // vueDevTools(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+})
 ```

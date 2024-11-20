@@ -50,7 +50,8 @@ export default defineComponent({
         await forgotPassword(email.value)
         router.push({ name: 'Login' })
       } catch (error) {
-        errorMessage.value = error.response.data.message
+        const err = error as { response: { data: { message: string } } }
+        errorMessage.value = err.response.data.message
       }
     }
 
